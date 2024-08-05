@@ -3,7 +3,17 @@ import CreateCode from './components/CreateCode.vue'
 </script>
 
 <template>
-  <h1 class="text-xl text-red-500">Hello world!</h1>
+  <div class="container mx-auto">
+    <header class="flex justify-center">
+      <h1>
+        <img
+          src="./assets/logo.svg"
+          alt="Codebreaker"
+          aria-label="Codebreaker"
+        />
+      </h1>
+    </header>
 
-  <CreateCode />
+    <CreateCode />
+  </div>
 </template>

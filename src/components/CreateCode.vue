@@ -1,21 +1,22 @@
 <script setup>
 import { ref } from 'vue'
 
-const count = ref(0)
-
-const increment = () => {
-  if (window.confirm('¿Está seguro de hacer eso?')) {
-    count.value++
-  }
-}
+const message = ref('')
 </script>
 
 <template>
-  <div>
-    {{ count }}
+  <div class="mt-8 flex justify-center">
+    <form>
+      <textarea
+        v-model="message"
+        cols="30"
+        rows="10"
+        class="rounded-xl bg-white/10 px-3 py-2 text-white"
+      ></textarea>
+    </form>
 
     <p>
-      <button @click="increment">Aumentar</button>
+      {{ message }}
     </p>
   </div>
 </template>
