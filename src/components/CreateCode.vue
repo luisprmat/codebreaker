@@ -18,19 +18,20 @@ const print = () => {
 
 <template>
   <div class="my-8 flex flex-1 flex-col items-center gap-10">
-    <form class="print:hidden">
+    <form class="w-full print:hidden">
       <textarea
         v-model="message"
         cols="30"
         rows="10"
-        class="rounded-xl bg-white/10 px-3 py-2"
+        class="w-full rounded-xl bg-white/10 px-3 py-2"
       ></textarea>
 
       <div class="mt-2 flex justify-end">
         <button
           type="button"
           @click="print"
-          class="rounded-md bg-blue-500 px-2 py-1"
+          class="rounded-md bg-blue-500 px-4 py-1 text-sm font-semibold disabled:bg-gray-300"
+          :disabled="!message"
         >
           Imprimir
         </button>
@@ -39,6 +40,6 @@ const print = () => {
 
     <Code :message="message" :letters="letters" />
 
-    <Legend :letters="letters" />
+    <Legend :letters="letters" v-if="message" />
   </div>
 </template>
