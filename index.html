@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
@@ -10,8 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
   </head>
-  <body class="bg-primary pt-8 text-white">
-    <section id="app" class="px-6"></section>
+  <body
+    class="bg-primary grid h-full place-items-center pt-8 text-white print:bg-white print:text-black"
+  >
+    <section
+      id="app"
+      class="container mx-auto flex h-full flex-col px-6"
+    ></section>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

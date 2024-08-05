@@ -10,13 +10,15 @@ const words = computed(() => props.message.split(' '))
 </script>
 
 <template>
-  <div class="flex gap-7 text-center">
-    <div v-for="word in words" class="word">
-      <span
-        v-for="character in word.split('')"
-        class="material-symbols-outlined character"
-        >{{ letters[character.toLowerCase()] ?? character }}</span
-      >
+  <div class="mt-auto flex flex-wrap gap-7 text-center">
+    <div v-for="word in words" class="word flex gap-x-2">
+      <div v-for="character in word.split('')">
+        <span class="material-symbols-outlined character text-4xl">{{
+          letters[character.toLowerCase()] ?? character
+        }}</span>
+
+        <div class="size-12 bg-gray-200"></div>
+      </div>
     </div>
   </div>
 </template>

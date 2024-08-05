@@ -10,17 +10,31 @@ const { alphaRange, combine, shuffle } = useFunctions()
 
 const message = ref('')
 const letters = combine(alphaRange('a', 'z'), shuffle(symbols))
+
+const print = () => {
+  window.print()
+}
 </script>
 
 <template>
-  <div class="my-8 flex flex-col items-center gap-10">
-    <form>
+  <div class="my-8 flex flex-1 flex-col items-center gap-10">
+    <form class="print:hidden">
       <textarea
         v-model="message"
         cols="30"
         rows="10"
         class="rounded-xl bg-white/10 px-3 py-2"
       ></textarea>
+
+      <div class="mt-2 flex justify-end">
+        <button
+          type="button"
+          @click="print"
+          class="rounded-md bg-blue-500 px-2 py-1"
+        >
+          Imprimir
+        </button>
+      </div>
     </form>
 
     <Code :message="message" :letters="letters" />
