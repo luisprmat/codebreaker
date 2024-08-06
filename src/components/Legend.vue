@@ -10,7 +10,9 @@ const props = defineProps({
       v-for="(symbol, letter) in letters"
       class="flex flex-col items-center border border-white/10 p-2 print:border-gray-400"
     >
-      <span class="mb-2 font-bold">{{ letter.toUpperCase() }}</span>
+      <span class="mb-2 font-bold">{{
+        letter === 'nn' ? 'Ñ' : letter.toUpperCase()
+      }}</span>
       <span class="material-symbols-outlined character">{{ symbol }}</span>
     </div>
   </div>

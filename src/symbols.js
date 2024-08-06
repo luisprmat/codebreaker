@@ -25,4 +25,5 @@ export default [
   'tools_power_drill',
   'nest_eco_leaf',
   'air_freshener',
+  'move_up',
 ]

@@ -8,8 +8,11 @@ import symbols from '@/symbols'
 
 const { alphaRange, combine, shuffle } = useFunctions()
 
+const extendedAlphabet = alphaRange('a', 'z')
+extendedAlphabet.splice(14, 0, 'nn')
+
 const message = ref('')
-const letters = combine(alphaRange('a', 'z'), shuffle(symbols))
+const letters = combine(extendedAlphabet, shuffle(symbols))
 
 const print = () => {
   window.print()
